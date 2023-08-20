@@ -158,7 +158,7 @@ export default function CreateListing() {
     setLoading(false);
     toast.success("Listing created");
 
-    navigate(`/category/${formDataCopy.type}/${docRef.id}}`)
+    navigate(`/category/${formDataCopy.type}/${docRef.id}`)
   }
 
   if (loading) {
@@ -254,7 +254,7 @@ export default function CreateListing() {
               <p className="text-lg text-semibold">
                 Latitude
               </p>
-              <input type="number" id="latitude" value={latitude} onChange={onChange} required min="-90" max="90"
+              <input type="number" id="latitude" value={latitude} onChange={onChange} required min="-90" max="90" step='any'
                 className="w-full px-4 py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded transition
                 duration-150 ease-in-out focus:bg-white focus:text-gray-700 focus:border-slate-600 text-center"/>
             </div>
@@ -262,7 +262,7 @@ export default function CreateListing() {
               <p className="text-lg text-semibold">
                 Longitude
               </p>
-              <input type="number" id="longitude" value={longitude} onChange={onChange} required min="-180" max="180"
+              <input type="number" id="longitude" value={longitude} onChange={onChange} required min="-180" max="180" step='any'
                 className="w-full px-4 py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded transition
                 duration-150 ease-in-out focus:bg-white focus:text-gray-700 focus:border-slate-600 text-center"/>
             </div>
@@ -271,7 +271,7 @@ export default function CreateListing() {
         <p className="text-lg font-semibold">
           Description
         </p>
-        <textarea type="text" id="discription" value={discription} onChange={onChange} placeholder="Address"
+        <textarea type="text" id="discription" value={discription} onChange={onChange} placeholder="Description"
           required className="w-full px-4 py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded transition
           duration-150 ease-in-out focus:text-gray-700 focus:bg-white focus:border-slate-600 mb-6"
         />

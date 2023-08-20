@@ -110,11 +110,11 @@ export default function Listing() {
             </li>
             <li className='flex items-center whitespace-nowrap'>
               <FaBath className='text-lg mr-1' />
-              {+listing.bathrooms > 1 ? `${listing.bathroom} Baths` : `1 Bath`}
+              {+listing.bathrooms > 1 ? `${listing.bathrooms} Baths` : `1 Bath`}
             </li>
             <li className='flex items-center whitespace-nowrap'>
               <FaParking className='text-lg mr-1' />
-              {listing.parking > 1 ? `Parking Spot` : `No Parking`}
+              {listing.parking ? `Parking Spot` : `No Parking`}
             </li>
             <li className='flex items-center whitespace-nowrap'>
               <FaChair className='text-lg mr-1' />
@@ -147,7 +147,7 @@ export default function Listing() {
             />
             <Marker position={[listing.geolocation.lat, listing.geolocation.lng]}>
               <Popup>
-                {listing.name}
+                {listing.address}
               </Popup>
             </Marker>
           </MapContainer>
